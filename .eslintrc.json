@@ -19,6 +19,8 @@
     ],
     "rules": {
         "react/function-component-definition": 0,
-        "arrow-body-style": 0
+        "arrow-body-style": 0,
+        "jsx-quotes": ["error", "prefer-single"]
+
     }
 }
