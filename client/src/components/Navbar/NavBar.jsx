@@ -7,11 +7,11 @@ const Navbar = () => {
         <h1>Trydent</h1>
         <nav>
           <ul>
-            <li className='nav-item'><a href='/'>Home</a></li>
+            <li className='nav-item'>Home</li>
             <hr />
-            <li className='nav-item'><a href='/about'>About</a></li>
+            <li className='nav-item'>About</li>
             <hr />
-            <li className='nav-item'><a href='/profile'>Profile</a></li>
+            <li className='nav-item'>Profile</li>
           </ul>
         </nav>
       </div>
