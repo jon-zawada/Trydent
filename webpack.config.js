@@ -1,4 +1,5 @@
 const path = require('path');
+
 const DIST_DIR = path.join(__dirname, 'client', 'dist');
 const SRC_DIR = path.join(__dirname, 'client', 'src', 'index.jsx');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -9,9 +10,8 @@ module.exports = {
   devtool: 'inline-source-map',
   output: {
     path: DIST_DIR,
-    filename: 'bundle.js'
+    filename: 'bundle.js',
   },
-  devtool: 'inline-source-map',
   devServer: {
     static: './dist',
   },
@@ -20,16 +20,16 @@ module.exports = {
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
-        loader: 'babel-loader'
+        loader: 'babel-loader',
       },
-    ]
+    ],
   },
-    resolve: {
+  resolve: {
     extensions: ['.jsx', '.ts', '.js'],
   },
-  plugins:[
+  plugins: [
     new HtmlWebpackPlugin({
-      template: './client/dist/index.html'
-    })
-  ]
-}
+      template: './client/dist/index.html',
+    }),
+  ],
+};
