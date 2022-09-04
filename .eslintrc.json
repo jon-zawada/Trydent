@@ -20,7 +20,8 @@
     "rules": {
         "react/function-component-definition": 0,
         "arrow-body-style": 0,
-        "jsx-quotes": ["error", "prefer-single"]
+        "jsx-quotes": ["error", "prefer-single"],
+        "comma-dangle": 0
 
     }
 }
