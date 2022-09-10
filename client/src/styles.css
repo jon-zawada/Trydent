@@ -5,10 +5,17 @@
   font-family: "Helvetica Neue";
 }
 
+:root {
+  --pimary-light: #FFFFFF;
+  --primary-dark: rgba(120, 144, 156, 0.24);
+  --primary-hsl: 200, 100%, 50%;
+  --primary-dark-hsl: 200, 100%, 6%;
+}
+
 body {
   margin: 0;
   padding: 0;
-  background: rgba(120, 144, 156, 0.24);
+  background: var(--primary-dark);
   overflow-y: hidden;
 }
 
@@ -64,7 +71,7 @@ ul {
 }
 
 .nav-item.active { /* fix this */
-  background-color: #04AA6D;
+  /* background-color: #04AA6D; */
 }
 
 .nav hr {
@@ -110,3 +117,90 @@ ul {
 }
 
 /* MEDIA QUERIES - END */
+
+
+/* LOGIN PAGE - START */
+
+.full-screen-container {
+  border: solid 1px blue;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-container {
+  --color: hsl(var(--primary-dark-hsl), .6);
+  background-color: var(--color);
+  box-shadow: 0 0 15px 0 var(--color);
+  padding: 40px 30px;
+  width: 80%;
+  max-width: 600px;
+  border-radius: 20px;
+}
+
+.login-title {
+  margin: 0;
+  color: white;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: normal;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.input-group label {
+  color: white;
+}
+
+.input-group input {
+  font-size: 1.25rem;
+  padding: 0.5em;
+  border: none;
+  outline: none;
+  border-radius: .25em;
+  color: black;
+}
+
+.input-group input:focus {
+  box-shadow: 0 0 0 3px hsl(var(--primary-hsl), .4);
+}
+
+.login-button {
+  padding: .5em 1em;
+  font-size: 1.5rem;
+  color: white;
+  background-color: hsl(var(--primary-hsl), .25);
+  border: solid 1px hsl(var(--primary-hsl));
+  border-radius: .25em;
+  outline: none;
+  cursor: pointer;
+}
+
+.login-button:hover,
+.login-button:focus {
+  background-color: hsl(var(--primary-hsl), .4);
+}
+
+.register {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.register a {
+  color: hsl(var(--primary-hsl), 0.8);
+}
+/* LOGIN PAGE - END */
