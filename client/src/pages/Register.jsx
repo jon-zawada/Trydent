@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Login = () => {
+const Register = () => {
   const [state, setState] = React.useState({
     email: '',
-    password: ''
+    password: '',
+    confirm: ''
   });
 
   const submit = (event) => {
@@ -22,6 +23,7 @@ const Login = () => {
     <div className='full-screen-container'>
       <div className='login-container'>
         <h1 className='login-title'>Trydent</h1>
+        <h1 className='login-sub-title'>Register for an account</h1>
         <form className='form'>
           <div className='input-group'>
             <label>Email</label>
@@ -41,15 +43,20 @@ const Login = () => {
               onChange={(e) => onChangeHandler(e)}
             />
           </div>
-          <button type='submit' className='login-button' onClick={submit}>Login</button>
+          <div className='input-group'>
+            <label>Confirm Password</label>
+            <input
+              type='password'
+              name='confirm'
+              value={state.confirm}
+              onChange={(e) => onChangeHandler(e)}
+            />
+          </div>
+          <button type='submit' className='login-button' onClick={submit}>Create Account</button>
         </form>
-        <div className='register'>
-          <Link to='/register'>Register</Link>
-          <Link to='/email'>Forgot Password?</Link>
-        </div>
       </div>
     </div>
   );
 };
 
-export default Login;
+export default Register;
