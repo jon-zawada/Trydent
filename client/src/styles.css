@@ -9,6 +9,7 @@
   --pimary-light: #FFFFFF;
   --primary-dark: rgba(120, 144, 156, 0.24);
   --primary-hsl: 200, 100%, 50%;
+  --primary-med-hsl: 200, 100%, 20%;
   --primary-dark-hsl: 200, 100%, 6%;
 }
 
@@ -34,7 +35,10 @@ ul {
 
 /* NAVBAR - START */
 .nav-wrapper {
-  background-color: #FFFFFF;
+  --color: hsl(var(--primary-dark-hsl), 0.6);
+  background-color: var(--color);
+  box-shadow: 0 0 15px 0 var(--color);
+  color: white;
   position: fixed;
   margin: 0;
   padding: 0;
@@ -67,7 +71,7 @@ ul {
 }
 
 .nav-item:hover {
-  background-color: #d3d3d3;
+  background-color: hsl(var(--primary-hsl), .25);
 }
 
 .nav-item.active { /* fix this */
