@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 
 const Register = () => {
   const [state, setState] = React.useState({
@@ -9,6 +10,14 @@ const Register = () => {
 
   const submit = (event) => {
     event.preventDefault();
+    if (state.password === state.confirm) {
+      axios.post('/users', {
+        email: state.email,
+        password: state.password
+      });
+    } else {
+      //Implement proper error handler
+    }
   };
 
   const onChangeHandler = (event) => {
