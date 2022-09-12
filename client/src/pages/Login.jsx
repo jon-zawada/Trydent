@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 
 const Login = () => {
   const [state, setState] = React.useState({
@@ -9,6 +10,11 @@ const Login = () => {
 
   const submit = (event) => {
     event.preventDefault();
+    axios.post('login', {
+      email: state.email,
+      password: state.password
+    });
+    //Implement error handling
   };
 
   const onChangeHandler = (event) => {
