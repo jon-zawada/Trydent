@@ -2,7 +2,6 @@ const path = require('path');
 
 const DIST_DIR = path.join(__dirname, 'client', 'dist');
 const SRC_DIR = path.join(__dirname, 'client', 'src', 'index.jsx');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'development',
@@ -32,9 +31,4 @@ module.exports = {
   resolve: {
     extensions: ['.jsx', '.ts', '.js'],
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: './client/dist/index.html',
-    }),
-  ],
 };
