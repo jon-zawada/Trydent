@@ -91,14 +91,55 @@ ul {
 
 .content-wrapper {
   margin-left: 25%;
-  padding: 1px 16px;
+  padding: 1px 20px;
+  height: 100vh;
+  overflow-y: auto;
+  border: solid red 1px;
 }
 
 .app {
+  border: solid green 1px;
+  padding: 5px;
+}
 
+.app-flex {
+  border: solid purple 1px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 /* CONTENT - END */
+
+/* POINTS PAGE - START */
+
+.user {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-image: url(https://www.dummyimage.com/600x400/000/fff.png&text=Profile+pic);
+}
+
+.points {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  border: solid purple 1px;
+}
+
+.points-manual {
+  border: solid 1px green;
+}
+
+.points-manual input {
+  border: none;
+}
+
+/* POINTS PAGE - END */
 
 /* MEDIA QUERIES - START */
 
