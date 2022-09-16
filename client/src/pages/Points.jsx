@@ -12,10 +12,7 @@ const Points = () => {
         <div className='user' />
         <div className='points'>
           <CustomPoints />
-          <div className='points-rubrik'>
-            <h6>Rubrik</h6>
-            <TablePoints />
-          </div>
+          <TablePoints />
         </div>
       </div>
     </ContentWrapper>
