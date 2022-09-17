@@ -2,6 +2,7 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar/NavBar';
 import Home from './pages/Home';
+import Points from './pages/Points';
 import About from './pages/About';
 import Profile from './pages/Profile';
 import Login from './pages/Login';
@@ -13,6 +14,7 @@ const App = () => {
       <Routes>
         <Route path='' element={<Navbar />}>
           <Route index element={<Home />} />
+          <Route path='/points' element={<Points />} />
           <Route path='/about' element={<About />} />
           <Route path='/profile' element={<Profile />} />
         </Route>
