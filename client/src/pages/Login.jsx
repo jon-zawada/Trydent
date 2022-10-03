@@ -21,8 +21,10 @@ const Login = () => {
           email: res.data.email,
           id: res.data._id
         });
+      })
+      .catch((err) => {
+        //render toast msg err accessible in err.response.data
       });
-    //Implement error handling
   };
 
   const onChangeHandler = (event) => {
@@ -57,7 +59,7 @@ const Login = () => {
           </div>
           <button type='submit' className='login-button' onClick={submit}>Login</button>
         </form>
-        <div className='register'>
+        <div className='form-footer'>
           <Link to='/register'>Register</Link>
           <Link to='/email'>Forgot Password?</Link>
         </div>
