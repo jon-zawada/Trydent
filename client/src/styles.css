@@ -196,13 +196,13 @@ ul {
   background-color: hsl(var(--primary-hsl), .4);
 }
 
-.register {
-  margin-top: 20px;
+.form-footer {
+  margin-top: 25px;
   display: flex;
   justify-content: space-around;
 }
 
-.register a {
+.form-footer a {
   color: hsl(var(--primary-hsl), 0.8);
 }
 /* LOGIN PAGE - END */

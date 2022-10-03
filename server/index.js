@@ -24,14 +24,14 @@ app.post('/login', (req, res) => {
   User.findOne({ email: req.body.email })
     .then((response) => {
       if (response === null) {
-        res.send('User email does not exist');
+        res.status(401).send({ clientCode: 'INVALID_EMAIL' });
       } else {
         bcrypt.compare(req.body.password, response.password)
           .then((isCorrectPassword) => {
             if (isCorrectPassword) {
               res.send({ email: response.email, _id: response._id });
             } else {
-              res.send('User email or password is incorrect');
+              res.status(401).send({ clientCode: 'INVALID_LOGIN' });
             }
           });
       }

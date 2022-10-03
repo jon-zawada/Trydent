@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 const Register = () => {
   const [state, setState] = React.useState({
@@ -62,6 +63,9 @@ const Register = () => {
           </div>
           <button type='submit' className='login-button' onClick={submit}>Create Account</button>
         </form>
+        <div className='form-footer'>
+          <Link to='/login'>Already have an account? Login in</Link>
+        </div>
       </div>
     </div>
   );
