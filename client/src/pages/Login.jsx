@@ -1,19 +1,27 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import { useAuth } from '../hooks/useAuth';
 
 const Login = () => {
   const [state, setState] = React.useState({
     email: '',
     password: ''
   });
+  const { login } = useAuth();
 
   const submit = (event) => {
     event.preventDefault();
-    axios.post('login', {
+    axios.post('http://localhost:3000/login', {
       email: state.email,
       password: state.password
-    });
+    })
+      .then((res) => {
+        login({
+          email: res.data.email,
+          id: res.data._id
+        });
+      });
     //Implement error handling
   };
 

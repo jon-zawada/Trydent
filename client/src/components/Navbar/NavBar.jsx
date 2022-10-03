@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, Outlet } from 'react-router-dom';
+import LogoutButton from '../common/LogoutButton';
 
 const Navbar = () => {
   return (
@@ -13,6 +14,7 @@ const Navbar = () => {
               <li className='nav-item'><Link to='/about'>About</Link></li>
               <li className='nav-item'><Link to='/profile'>Profile</Link></li>
             </ul>
+            <LogoutButton />
           </nav>
         </div>
       </div>

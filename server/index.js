@@ -29,7 +29,7 @@ app.post('/login', (req, res) => {
         bcrypt.compare(req.body.password, response.password)
           .then((isCorrectPassword) => {
             if (isCorrectPassword) {
-              res.send('Login successful');
+              res.send({ email: response.email, _id: response._id });
             } else {
               res.send('User email or password is incorrect');
             }
@@ -45,10 +45,10 @@ app.get('/users', () => {
 
 });
 
-app.post('/users', (req, res) => {
-  User.find({ email: req.body.email })
+app.post('/register', (req, res) => {
+  User.findOne({ email: req.body.email })
     .then((response) => {
-      if (response.length) {
+      if (response !== null) {
         res.send('A user with this email already exists');
       } else {
         bcrypt.hash(req.body.password, 10)

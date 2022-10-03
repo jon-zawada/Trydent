@@ -11,7 +11,7 @@ const Register = () => {
   const submit = (event) => {
     event.preventDefault();
     if (state.password === state.confirm) {
-      axios.post('/users', {
+      axios.post('http://localhost:3000/register', {
         email: state.email,
         password: state.password
       });
