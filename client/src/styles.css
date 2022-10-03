@@ -36,8 +36,8 @@ ul {
 /* NAVBAR - START */
 .nav-wrapper {
   --color: hsl(var(--primary-dark-hsl), 0.6);
-  background-color: var(--color);
   box-shadow: 0 0 15px 0 var(--color);
+  background-color: var(--color);
   color: white;
   position: fixed;
   margin: 0;
@@ -91,37 +91,26 @@ ul {
 
 .content-wrapper {
   margin-left: 25%;
-  padding: 1px 16px;
+  padding: 1px 20px;
+  height: 100vh;
+  overflow-y: auto;
+  /* border: solid red 1px; */
 }
 
 .app {
+  /* border: solid green 1px; */
+  padding: 5px;
+}
 
+.app-flex {
+  /* border: solid purple 1px; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 /* CONTENT - END */
-
-/* MEDIA QUERIES - START */
-
-@media screen and (max-width: 700px) {
-  .nav-wrapper {
-    width: 100%;
-    height: auto;
-    position: relative;
-  }
-  .nav{
-    margin-top: 0;
-  }
-  .content-wrapper {
-    margin-left: 0px;
-  }
-}
-
-@media screen and (max-width: 400px) {
-
-}
-
-/* MEDIA QUERIES - END */
-
 
 /* LOGIN PAGE - START */
 
@@ -217,3 +206,147 @@ ul {
   color: hsl(var(--primary-hsl), 0.8);
 }
 /* LOGIN PAGE - END */
+
+/* POINTS PAGE - START */
+
+.user {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin: 10px 0 30px; 
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-image: url('./imgs/default.png');
+}
+
+.points {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  /* border: solid purple 1px; */
+}
+
+/* custom points start */
+
+.custom-points {
+  --color: hsl(var(--primary-dark-hsl), 0.6);
+  background-color: var(--color);
+  padding: 20px;
+  /* border: solid 1px green; */
+  border-radius: 20px;
+  max-height: 300px; /* remove possibly*/
+  --color: hsl(var(--primary-dark-hsl), 0.6);
+  box-shadow: 0 0 10px 0 var(--color);
+}
+
+.custom-points h6 {
+  margin: 0;
+  color: white;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: normal;
+}
+
+.custom-points form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.custom-points input {
+  border: none;
+}
+
+.custom-points button {
+  font-size: 1.5rem;
+  color: white;
+  padding: 4px 0 4px;
+  background-color: hsl(var(--primary-hsl), .4);
+  border: solid 1px hsl(var(--primary-hsl));
+  border: none;
+  border-radius: .25em;
+  outline: none;
+  cursor: pointer;
+} 
+
+.custom-points button:hover,
+.custom-points button:focus {
+  background-color: hsl(var(--primary-hsl));
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+/* custom points end */
+
+/* table points start*/
+.table-wrapper {
+  /* border: solid #58676F 1px; */
+  border-radius: 20px;
+  width: 60%;
+  height: 300px;
+  overflow-y: auto;
+  --color: hsl(var(--primary-dark-hsl), 0.6);
+  box-shadow: 0 0 10px 0 var(--color);
+}
+.table-points {
+  width: 100%;
+  border-collapse: collapse;
+  /* max-height: 100px; */
+  height: 100%;
+}
+
+.table-points td, .table-points th {
+  padding: 12px;
+}
+
+/* .table-points tr:nth-child(even){background-color: #f2f2f2;} */
+
+.table-points tr{background-color: #f2f2f2;}
+
+.table-points th {
+  --color: #58676F;
+  background-color: var(--color);
+  padding: 16px;
+  font-size: 1.5rem;
+  text-align: left;
+  color: white;
+  border: none;
+  position: sticky;
+  top: 0; /* Don't forget this, required for the stickiness */
+}
+/* table points end*/
+
+
+/* POINTS PAGE - END */
+
+
+/* MEDIA QUERIES - START */
+
+@media screen and (max-width: 700px) {
+  .nav-wrapper {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .nav{
+    margin-top: 0;
+  }
+  .content-wrapper {
+    margin-left: 0px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+
+}
+
+/* MEDIA QUERIES - END */

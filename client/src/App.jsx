@@ -2,6 +2,7 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar/NavBar';
 import Home from './pages/Home';
+import Points from './pages/Points';
 import About from './pages/About';
 import Profile from './pages/Profile';
 import Login from './pages/Login';
