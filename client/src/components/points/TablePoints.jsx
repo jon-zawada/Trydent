@@ -1,56 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
+import axios from 'axios';
+import { useAuth } from '../../hooks/useAuth';
 
 const TablePoints = () => {
-  const dummyData = [
-    {
-      category: 'working out',
-      value: 25
-    },
-    {
-      category: 'coding',
-      value: 15
-    },
-    {
-      category: 'something dope',
-      value: 5
-    },
-    {
-      category: 'eat healthy',
-      value: 50
-    },
-    {
-      category: 'working out',
-      value: 25
-    },
-    {
-      category: 'coding',
-      value: 15
-    },
-    {
-      category: 'something dope',
-      value: 5
-    },
-    {
-      category: 'eat healthy',
-      value: 50
-    },
-    {
-      category: 'working out',
-      value: 25
-    },
-    {
-      category: 'coding',
-      value: 15
-    },
-    {
-      category: 'something dope',
-      value: 5
-    },
-    {
-      category: 'eat healthy',
-      value: 50
-    },
-  ];
+  const [rubrik, setRubrik] = useState([]);
+  const userId = useAuth().user.id;
+
+  const getRubrik = () => {
+    axios.get(`http://localhost:3000/rubrik/${userId}`)
+      .then((res) => {
+        setRubrik(res.data);
+      });
+  };
+
+  React.useEffect(() => {
+    getRubrik();
+  }, []);
 
   return (
     <div className='table-wrapper'>
@@ -60,7 +25,7 @@ const TablePoints = () => {
           <th>Category</th>
           <th>Point Value</th>
         </tr>
-        {dummyData.map((data) => (
+        {rubrik.map((data) => (
           <tr>
             <td>{data.category.toLocaleUpperCase()}</td>
             <td>{data.value}</td>

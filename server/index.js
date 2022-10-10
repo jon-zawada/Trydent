@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const bcrypt = require('bcrypt');
 const cors = require('cors');
 const User = require('../db/index');
+const { defaultRubrik } = require('../db/defaults');
 
 const app = express();
 const PORT = 3000;
@@ -53,7 +54,12 @@ app.post('/register', (req, res) => {
       } else {
         bcrypt.hash(req.body.password, 10)
           .then((hashedPassword) => {
-            const user = new User({ email: req.body.email, password: hashedPassword });
+            const user = new User({
+              email: req.body.email,
+              password: hashedPassword,
+              rubrik: [...defaultRubrik]
+            });
+
             user.save()
               .then(() => {
                 res.send('User successfully created');
@@ -62,6 +68,14 @@ app.post('/register', (req, res) => {
       }
     });
     //implement catches
+});
+
+app.get('/rubrik/:id', (req, res) => {
+  const { id } = req.params;
+  User.findOne({ _id: id })
+    .then((response) => {
+      res.status(200).send(response.rubrik);
+    });
 });
 
 app.get('*', (req, res) => {
